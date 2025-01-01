@@ -7,7 +7,7 @@ type CategoriesProps = {}
 const Categories = ({ }: CategoriesProps) => {
 
   return (
-    <div className='pt-6 space-y-4 md:space-y-6'>
+    <section className='pt-6 space-y-4 md:space-y-6'>
       <div className="flex flex-col justify-center items-center gap-y-2">
         <h1 className="text-gray-800 text-xl md:text-3xl font-bold">CATEGORIES</h1>
         <p className="text-gray-600 text-xs md:text-sm text-center md:max-w-[70vw]">It is a collection of related products grouped together based on shared characteristics. It simplifies browsing by organizing items into logical sections, helping customers find what they need quickly and easily.</p>
@@ -23,7 +23,7 @@ const Categories = ({ }: CategoriesProps) => {
           )
         })}
       </div>
-    </div>
+    </section>
   )
 }
 
