@@ -360,6 +360,9 @@ export default {
       '2xl': '0 25px 25px rgb(0 0 0 / 0.15)',
       none: '0 0 #0000',
     },
+    boxShadow: {
+      'product-card-shadow': '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+    },
     fill: ({ theme }) => theme('colors'),
     extend: {
       colors: {
