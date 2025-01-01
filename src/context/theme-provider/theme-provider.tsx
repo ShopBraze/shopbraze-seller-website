@@ -5,8 +5,8 @@ const customPromise = new Promise<FontStyles>((resolve) => {
     const data: FontStyles = {
       color: {
         red: "0",
-        green: "147",
-        blue: "153",
+        green: "90",
+        blue: "67",
       },
       font_family: {
         title1: { name: "Podkova", weight: "500" },
