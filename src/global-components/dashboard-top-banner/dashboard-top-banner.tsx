@@ -9,6 +9,7 @@ type Props = {}
 const DashboardTopBanner = (props: Props) => {
   var settings = {
     // dots: true,
+    arrows: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -20,7 +21,7 @@ const DashboardTopBanner = (props: Props) => {
   };
 
   return (
-    <div className="overflow-hidden">
+    <div className="">
       <Slider {...settings}>
         <div className="p-2.5 md:p-0 min-h-[45px] bg-primary-700 !flex justify-center items-center gap-4">
           <p className="text-xs sm:text-sm md:text-base font-semibold text-[#fff]">The big closeout sale is now live! The big closeout sale is now live!</p>

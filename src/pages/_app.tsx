@@ -1,9 +1,10 @@
 import { ThemeProvider } from "context/theme-provider/theme-provider";
-import "styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import TopBarProgress from "react-topbar-progress-indicator";
+
+import "styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
 

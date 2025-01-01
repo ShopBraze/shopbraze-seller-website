@@ -27,7 +27,7 @@ const SocialMediaLinksData = [
 
 const Footer = () => {
   return (
-    <div className="px-3 md:px-6 pt-4 sm:pt-8 md:pt-12 lg:pt-16 xl:pt-20 flex flex-col md:flex-row gap-8 md:gap-16 lg:gap-24">
+    <footer className="px-3 md:px-6 pt-4 sm:pt-8 md:pt-12 lg:pt-16 xl:pt-20 flex flex-col md:flex-row gap-8 md:gap-16 lg:gap-24">
       <div className="space-y-3 md:space-y-4 text-center md:text-left">
         <div className="pt-4 flex flex-col gap-y-1 justify-center items-center md:items-start">
           <Image src={WebsiteLogo} alt="shopbraze.png" className="h-[50px] md:h-auto" />
@@ -75,7 +75,7 @@ const Footer = () => {
         </div>
 
       </div>
-    </div>
+    </footer>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import DashboardTopBanner from '../dashboard-top-banner/dashboard-top-banner'
-import Navbar from '../navbar/navbar'
-import Footer from '../footer/footer'
+import Navbar from '../../common-components/navbar/navbar'
+import Footer from '../../common-components/footer/footer'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -9,12 +9,14 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div>
-      <DashboardTopBanner />
-      <Navbar />
+    <main>
+      <div className="sticky top-0 bg-[#fff] z-30">
+        <DashboardTopBanner />
+        <Navbar />
+      </div>
       {children}
       <Footer />
-    </div>
+    </main>
   )
 }
 

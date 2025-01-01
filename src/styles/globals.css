@@ -94,3 +94,24 @@ body {
 .primaryColor {
   color: var(--color-primary);
 }
+
+.slick-slider .slick-arrow:before {
+  color: #333;
+  font-size: 2rem;
+}
+
+.slick-slider .slick-dots button:before {
+  font-size: 10px;
+  color: var(--color-primary, #005a43);
+}
+
+.slick-slider .slick-dots li.slick-active button::before {
+  color: var(--color-primary, #005a43);
+}
+.slick-slider .slick-dots {
+  bottom: -40px;
+}
+
+.slick-slider .slick-dots li {
+  margin: 0 0.5rem;
+}
