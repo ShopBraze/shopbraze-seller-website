@@ -2,20 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
+select:focus {
+  box-shadow: none !important;
+}
+
+html,
+* {
+  scroll-behavior: smooth;
+}
+
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Quick Sand";
+}
+
+/* Load variable Inter font file : All font weights and styles */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/inter/InterVariable.ttf");
+  font-display: swap;
+}
+
+/* --------------------------- Instrument Serif Font ---------------------------- */
+/* font weight : 400 && Italic Font Style */
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("../assets/fonts/instrument-serif/InstrumentSerif-Italic.ttf");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* --------------------------- Quick Sand Font ---------------------------- */
+@font-face {
+  font-family: "Quick Sand";
+  src: url("../assets/fonts/quick-sand/quick-sand-variable.ttf");
+  font-style: italic;
+  /* font-weight: 100 900; */
+  font-display: swap;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.title1 {
+  font-family: var(--font-title1);
+  font-weight: var(--font-title1-weight);
+}
+
+.title2 {
+  font-family: var(--font-title2);
+  font-weight: var(--font-title2-weight);
+}
+
+.title3 {
+  font-family: var(--font-title3);
+  font-weight: var(--font-title3-weight);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-weight: var(--font-body-weight);
+}
+
+.primaryColor {
+  color: var(--color-primary);
 }
