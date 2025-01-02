@@ -5,9 +5,10 @@ import Image from 'next/image';
 
 type CustomScrollbarProps = {
   children: React.ReactNode;
+  showArrow?: boolean
 };
 
-const HorizontalScroll = ({ children }: CustomScrollbarProps) => {
+const HorizontalScroll = ({ children, showArrow = true }: CustomScrollbarProps) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isLeftDisabled, setIsLeftDisabled] = useState(true);
   const [isRightDisabled, setIsRightDisabled] = useState(false);
@@ -61,13 +62,14 @@ const HorizontalScroll = ({ children }: CustomScrollbarProps) => {
     <div className="relative">
 
       {/* Left Scroll Button */}
-      <Button
+      {showArrow && <Button
         onClick={scrollLeft}
         disabled={isLeftDisabled}
         className={`flex justify-center items-center h-8 w-8 absolute top-1/2 left-0 transform -translate-y-1/2 bg-primary-800 p-2 rounded-full z-10 ${isLeftDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
         <Image src={ArrowLeftIcon} alt="arrow-left.svg" className=' rotate-180 h-6 w-6' />
       </Button>
+      }
 
       {/* Scrollable Content */}
       <div ref={scrollRef} className="flex overflow-scroll scrollbar-hide cursor-pointer">
@@ -75,13 +77,14 @@ const HorizontalScroll = ({ children }: CustomScrollbarProps) => {
       </div>
 
       {/* Right Scroll Button */}
-      <button
+      {showArrow && <Button
         onClick={scrollRight}
         disabled={isRightDisabled}
         className={`flex justify-center items-center h-8 w-8 absolute top-1/2 right-0 transform -translate-y-1/2 bg-primary-800 p-2 rounded-full z-10 ${isRightDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
         <Image src={ArrowLeftIcon} alt="arrow-right.svg" className='h-6 w-6' />
-      </button>
+      </Button>
+      }
     </div>
   );
 };

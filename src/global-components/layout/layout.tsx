@@ -9,7 +9,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <main>
+    <main className=' pb-6 md:pb-10'>
       <div className="sticky top-0 bg-[#fff] z-30">
         <DashboardTopBanner />
         <Navbar />
