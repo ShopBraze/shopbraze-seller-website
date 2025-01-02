@@ -12,7 +12,7 @@ const DiscountSale = ({ }: DiscountSaleProps) => {
         {
           [1, 1, 1,].map(() => {
             return (
-              <div className="relative h-[150px] sm:h-[180px] md:h-[200px] lg:h-[220px] w-auto aspect-[3/2] bg-discount-sale-box-background bg-contain bg-no-repeat flex justify-center items-center">
+              <div className="relative h-[150px] sm:h-[180px] md:h-[200px] lg:h-[220px] w-auto aspect-[3/2] discount-sale-box-background bg-contain bg-no-repeat flex justify-center items-center">
                 <div className="px-8 md:px-12 py-2 flex flex-col justify-center items-center border border-primary-500 rounded-lg">
                   <p className="text-xs font-semibold">Upto</p>
                   <p className="text-lg md:text-2xl font-semibold">₹600</p>
