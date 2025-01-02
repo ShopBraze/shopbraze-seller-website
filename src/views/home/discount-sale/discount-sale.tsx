@@ -7,7 +7,7 @@ const DiscountSale = ({ }: DiscountSaleProps) => {
         <h1 className="text-gray-800 text-xl md:text-3xl font-bold">Discount Sale</h1>
         <p className="text-gray-600 text-xs md:text-sm text-center md:max-w-[70vw]">Discover our special discount collections! We've grouped related products together by shared features, making it easy to browse and find just what you need—all at incredible prices.</p>
       </div>
-      <div className="flex gap-2 md:gap-4 justify-between overflow-auto scrollbar-hide">
+      <div className="flex gap-2 md:gap-4 justify-evenly overflow-auto scrollbar-hide">
 
         {
           [1, 1, 1,].map(() => {
