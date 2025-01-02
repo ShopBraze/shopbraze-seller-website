@@ -124,3 +124,7 @@ body {
 .slick-slider .slick-dots li {
   margin: 0 0.5rem;
 }
+
+.discount-sale-box-background {
+  background-image: url("../assets//images//home-page-discount-sale-container-image.svg");
+}
