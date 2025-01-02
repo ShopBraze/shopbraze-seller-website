@@ -13,7 +13,7 @@ const Categories = ({ }: CategoriesProps) => {
         <p className="text-gray-600 text-xs md:text-sm text-center md:max-w-[70vw]">It is a collection of related products grouped together based on shared characteristics. It simplifies browsing by organizing items into logical sections, helping customers find what they need quickly and easily.</p>
       </div>
 
-      <div className='flex gap-5 xs:justify-between overflow-scroll scrollbar-hide cursor-pointer'>
+      <div className='flex gap-5 xs:justify-evenly overflow-scroll scrollbar-hide cursor-pointer'>
         {ProductsCategoriesData?.map((category) => {
           return (
             <div className="flex flex-col items-center gap-2 flex-shrink-0">
