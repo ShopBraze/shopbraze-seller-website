@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+module.exports = {
   content: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
   theme: {
     screens: {
@@ -256,7 +256,7 @@ export default {
       'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
-      'discount-sale-box-background': "url('assets/images/home-page-discount-sale-container-image.svg')",
+      // 'discount-sale-box-background': "url('assets/images/home-page-discount-sale-container-image.svg')",
     },
     backgroundOpacity: ({ theme }) => theme('opacity'),
     zIndex: {
