@@ -1,13 +1,16 @@
 import { DefaultProductImageUrl } from "constants/index.const"
 import StarIcon from "assets/icons/rating-star-yellow-icon.svg"
 import Image from "next/image"
+import DiscountTag from "./discount-tag/discount-tag"
+import { useTheme } from "context/theme-provider/theme-provider"
 
 
 type ProductCardProps = {}
 
 const ProductCard = ({ }: ProductCardProps) => {
+  const { fontStyles } = useTheme()
   return (
-    <div className="space-y-2 rounded-md shadow-product-card-shadow w-[250px] md:w-[300px]">
+    <div className="relative space-y-2 rounded-md shadow-product-card-shadow w-[250px] md:w-[300px]">
       <Image src={DefaultProductImageUrl} alt="product.png" height={300} width={300} className="object-fill h-[200px] sm:h-[250px] md:h-[300px]" />
       <div className="px-2">
         <div className="flex justify-between items-center">
@@ -27,6 +30,7 @@ const ProductCard = ({ }: ProductCardProps) => {
         </div>
 
       </div>
+      <DiscountTag className="absolute top-4 left-0" />
     </div>
   )
 }
