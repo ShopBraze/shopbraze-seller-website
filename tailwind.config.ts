@@ -256,7 +256,7 @@ export default {
       'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
-      // 'login-screen-right-side-image': "url('/src/assets/images/Login-Screen/right-side.png')",
+      'discount-sale-box-background': "url('assets/images/home-page-discount-sale-container-image.svg')",
     },
     backgroundOpacity: ({ theme }) => theme('opacity'),
     zIndex: {
