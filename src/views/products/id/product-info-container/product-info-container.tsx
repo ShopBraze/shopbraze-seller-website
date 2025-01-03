@@ -12,7 +12,7 @@ type ProductInfoContainerProps = {
 
 const ProductInfoContainer = ({ productData }: ProductInfoContainerProps) => {
   return (
-    <div className=''>
+    <div className='mt-8 md:mt-0'>
       <ProductTitleAndPrice productData={productData} />
       <ProductSizes />
       <ProductQuantity />
