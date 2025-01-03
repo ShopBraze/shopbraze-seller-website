@@ -2,16 +2,15 @@ import { DefaultProductImageUrl } from "constants/index.const"
 import StarIcon from "assets/icons/rating-star-yellow-icon.svg"
 import Image from "next/image"
 import DiscountTag from "./discount-tag/discount-tag"
-import { useTheme } from "context/theme-provider/theme-provider"
 
 
 type ProductCardProps = {}
 
 const ProductCard = ({ }: ProductCardProps) => {
-  const { fontStyles } = useTheme()
+
   return (
-    <div className="relative space-y-2 rounded-md shadow-product-card-shadow w-[210px] md:w-[260px]">
-      <Image src={DefaultProductImageUrl} alt="product.png" height={300} width={300} className="object-fill w-full aspect-[4/5]" />
+    <div className="relative space-y-2 rounded-md shadow-product-card-shadow w-[210px] md:w-[240px] flex-shrink-0">
+      <Image src={DefaultProductImageUrl} alt="product.png" height={300} width={300} className="object-fill w-full " />
       <div className="px-2">
         <div className="flex justify-between items-center">
           <p className="text-gray-700 text-sm md:text-base font-medium">Shiny Dress</p>
