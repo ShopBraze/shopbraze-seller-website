@@ -9,7 +9,7 @@ const RecentPurchases = ({ }: RecentPurchasesProps) => {
   return (
     <div className='space-y-6 md:space-y-8'>
       <h1 className="text-center text-xl md:text-2xl font-semibold text-gray-800">Recent Purchases</h1>
-      <HorizontalScroll showArrow={false} autoScroll containerClassName='flex gap-4'>
+      <HorizontalScroll showArrow={false} autoScroll autoScrollSpeed={4000} containerClassName='flex gap-4'>
         {
           [...new Array(20)].map((_, index) => {
             return (

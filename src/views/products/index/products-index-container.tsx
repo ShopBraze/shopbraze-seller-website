@@ -2,7 +2,6 @@ import { DefaultProductsPageCategories } from 'constants/index.const'
 import Layout from 'global-components/layout/layout'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 type Props = {}
 

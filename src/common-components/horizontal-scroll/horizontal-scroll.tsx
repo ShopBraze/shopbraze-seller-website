@@ -65,10 +65,8 @@ const HorizontalScroll = ({
     if (autoScroll) {
       intervalId = setInterval(() => {
         if (scrollRef?.current) {
-          if (
-            scrollRef?.current?.scrollLeft + scrollRef?.current?.clientWidth >=
-            scrollRef?.current?.scrollWidth
-          ) {
+          const { scrollLeft, scrollWidth, clientWidth } = scrollRef?.current;
+          if (scrollLeft + clientWidth >= scrollWidth - 1) {
             scrollRef?.current?.scrollTo({ left: 0, behavior: "smooth" });
           } else {
             scrollRef?.current?.scrollBy({
@@ -84,6 +82,7 @@ const HorizontalScroll = ({
       if (intervalId) clearInterval(intervalId);
     };
   }, [autoScroll, autoScrollSpeed, scrollDistance]);
+
 
   useEffect(() => {
     updateScrollDistance();

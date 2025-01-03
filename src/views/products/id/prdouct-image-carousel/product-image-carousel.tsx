@@ -29,6 +29,14 @@ const ProductImageCarousel = ({ productData }: ProductImageCarouselProps) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 1000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          dots: true
+        }
+      },
+    ]
   };
 
   return (
