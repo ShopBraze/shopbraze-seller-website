@@ -26,8 +26,8 @@ const ProductTitleAndPrice = ({ productData }: ProductTitleAndPriceProps) => {
       </div>
       <p className="mt-1 md:mt-2 text-xs md:text-sm text-gray-500 font-semibold">Inclusive of all Taxes</p>
       <div className="pt-2 md:pt-4 flex items-center gap-4">
-        <div className="py-1 px-2 bg-primary-300 text-xs text-[#fff]">Free Delivery</div>
-        <div className="py-1 px-2 bg-primary-300 text-xs text-[#fff]">View Available Offers</div>
+        <div className="py-1 px-2 bg-primary-200 text-xs text-[#fff] rounded-sm">Free Delivery</div>
+        <div className="py-1 px-2 bg-primary-200 text-xs text-[#fff] rounded-sm">View Available Offers</div>
       </div>
     </div>
   )
