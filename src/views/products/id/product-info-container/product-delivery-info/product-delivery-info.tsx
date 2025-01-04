@@ -9,15 +9,15 @@ type ProductDeliveryInfoProps = {}
 const ProductDeliveryInfo = ({ }: ProductDeliveryInfoProps) => {
   return (
     <div className="mt-5 space-y-3">
-      <div className="py-2 px-3 border border-gray-300 rounded-md flex items-center gap-3">
+      <div className="py-2 px-3 border border-dashed border-gray-300 rounded-md flex items-center gap-3">
         <Image src={DeliveryIcon} alt="delivery-icon.svg" />
         <p className="text-sm text-gray-600 font-medium">Get it Delivery in 4-9 days</p>
       </div>
-      <div className="py-2 px-3 border border-gray-300 rounded-md flex items-center gap-3">
+      <div className="py-2 px-3 border border-dashed border-gray-300 rounded-md flex items-center gap-3">
         <Image src={CashOnDeliveryIcon} alt="delivery-icon.svg" />
         <p className="text-sm text-gray-600 font-medium">Cash on Delivery </p>
       </div>
-      <div className="py-2 px-3 border border-gray-300 rounded-md flex items-center gap-3">
+      <div className="py-2 px-3 border border-dashed border-gray-300 rounded-md flex items-center gap-3">
         <Image src={ReturnProductIcon} alt="delivery-icon.svg" />
         <p className="text-sm text-gray-600 font-medium">3 Days Return ( Damaged Items Only) </p>
       </div>

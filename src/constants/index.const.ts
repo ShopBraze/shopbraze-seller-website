@@ -103,3 +103,12 @@ export const DefaultProductsPageCategories = [
     image: "https://res.cloudinary.com/dwr2iupak/image/upload/v1735885403/products-page-image-2_hypzm6.webp"
   }
 ]
+
+
+export const ProductSizesOptions = [
+  { label: 'S', value: 'S' },
+  { label: 'M', value: 'M' },
+  { label: 'L', value: 'L' },
+  { label: 'XL', value: 'XL' },
+  { label: 'XXL', value: 'XXL' },
+];

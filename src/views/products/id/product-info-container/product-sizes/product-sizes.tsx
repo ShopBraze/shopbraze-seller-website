@@ -15,11 +15,11 @@ const ProductSizes = (props: Props) => {
           Size Guide
         </div>
       </div>
-      <div className="flex flex-wrap gap-5">
+      <div className="flex flex-wrap gap-3 md:gap-5">
         {
           ['S', 'M', 'L', "XL", 'XXL'].map((size) => {
             return (
-              <div className="flex justify-center items-center h-8 w-8 md:h-10 md:w-10 rounded-full border border-gray-200 font-medium text-sm md:text-base text-gray-800" key={size}>{size}</div>
+              <div className="flex justify-center items-center h-9 w-9 md:h-10 md:w-10 rounded-full border border-gray-200 font-medium text-sm md:text-base text-gray-800" key={size}>{size}</div>
             )
           })
         }

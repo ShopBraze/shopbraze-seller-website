@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRef, useState } from "react";
+import { SetStateAction, useRef, useState } from "react";
 
 
 type ProductImageCarouselProps = {
@@ -29,6 +29,7 @@ const ProductImageCarousel = ({ productData }: ProductImageCarouselProps) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 1000,
+    afterChange: handleActiveSlideIndex,
     responsive: [
       {
         breakpoint: 768,
