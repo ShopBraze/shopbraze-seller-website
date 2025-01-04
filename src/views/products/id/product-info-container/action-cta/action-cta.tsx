@@ -20,25 +20,22 @@ const ActionCta = ({ }: ActionCtaProps) => {
         <Button className="w-full py-2.5 rounded-md bg-primary-700 text-[#fff] text-sm font-semibold">BUY NOW</Button>
       </div>
 
-      <div className="fixed z-30 bottom-0 left-0 right-0 bg-[#fff] py-2 px-3 border-t border-gray-200">
-        <div className="flex flex-col w-full gap-3 sm:gap-5" id="product-page-action-cta">
-          <MenuSelect options={ProductSizesOptions}
-            onChange={(option) => { setSelectedSize(option?.value) }}
-            placeHolder='Select Size'
-            selected={selectedSize}
-            optionsContainerClassName='-top-[190px]'
-            optionLabelClassName='text-sm'
-          />
-          <Button className="w-full py-2.5 rounded-md bg-primary-700 text-[#fff] text-sm font-semibold">
-            BUY NOW
-          </Button>
+      {
+        !isInView && <div className="fixed z-30 bottom-0 left-0 right-0 bg-[#fff] py-2 md:py-4 px-3 border-t border-gray-200 md:bg-gray-100">
+          <div className="flex flex-col md:flex-row w-full gap-3 sm:gap-5" id="product-page-action-cta">
+            <MenuSelect options={ProductSizesOptions}
+              onChange={(option) => { setSelectedSize(option?.value) }}
+              placeHolder='Select Size'
+              selected={selectedSize}
+              optionsContainerClassName='-top-[190px]'
+              optionLabelClassName='text-sm'
+            />
+            <Button className="w-full py-2.5 rounded-md bg-primary-700 text-[#fff] text-sm font-semibold">
+              ₹1,999 &nbsp; |  &nbsp; BUY NOW
+            </Button>
+          </div>
         </div>
-      </div>
-
-
-
-
-
+      }
     </>
   )
 }

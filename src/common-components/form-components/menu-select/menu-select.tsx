@@ -13,11 +13,12 @@ type MenuSelectProps = {
   selected?: string;
   placeHolder: string
   onChange: (selected: Option) => void;
+  buttonClassName?: string;
   optionsContainerClassName?: string
   optionLabelClassName?: string
 };
 
-const MenuSelect = ({ options, selected, placeHolder, onChange, optionsContainerClassName, optionLabelClassName }: MenuSelectProps) => {
+const MenuSelect = ({ options, selected, placeHolder, onChange, buttonClassName, optionsContainerClassName, optionLabelClassName }: MenuSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -30,11 +31,11 @@ const MenuSelect = ({ options, selected, placeHolder, onChange, optionsContainer
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <button
         ref={buttonRef}
         onClick={() => setIsOpen((prev) => !prev)}
-        className="p-2 rounded-md bg-white border border-gray-300 flex items-center w-full"
+        className={`p-2 rounded-md bg-white border border-gray-300 flex items-center w-full ${buttonClassName}`}
       >
         <p className="text-gray-800 font-semibold flex-1">{options.find(option => option?.value === selected)?.label || placeHolder}</p>
         <Image
