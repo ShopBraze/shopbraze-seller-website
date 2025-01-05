@@ -1,6 +1,6 @@
+import DynamicImage from 'common-components/dynamic-image/dynamic-image'
 import { DefaultProductsPageCategories } from 'constants/index.const'
 import Layout from 'global-components/layout/layout'
-import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {}
@@ -15,7 +15,7 @@ const ProductsIndexContainer = (props: Props) => {
               return (
                 <Link href={`/products/rec132ty867`}>
                   <div className='relative'>
-                    <Image src={item?.image} alt="item-name" height={250} width={380} className='rounded-lg' />
+                    <DynamicImage src={item?.image} alt="item-name" height={380} width={250} className='rounded-lg' />
                     <div className="absolute bottom-6 w-full flex justify-center">
                       <div className="py-1 px-1.5 bg-[#fff] font-semibold rounded-sm text-xs sm:text-sm lg:text-base">{item?.title}</div>
                     </div>

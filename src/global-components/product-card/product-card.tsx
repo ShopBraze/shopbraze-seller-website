@@ -3,6 +3,7 @@ import StarIcon from "assets/icons/rating-star-yellow-icon.svg"
 import Image from "next/image"
 import DiscountTag from "./discount-tag/discount-tag"
 import Link from "next/link"
+import DynamicImage from "common-components/dynamic-image/dynamic-image"
 
 
 type ProductCardProps = {}
@@ -12,7 +13,8 @@ const ProductCard = ({ }: ProductCardProps) => {
   return (
     <Link href={`/products`}>
       <div className="relative space-y-2 rounded-md shadow-product-card-shadow w-[210px] md:w-[240px] flex-shrink-0">
-        <Image src={DefaultProductImageUrl} alt="product.png" height={300} width={300} className="object-fill w-full " />
+        {/* <Image src={DefaultProductImageUrl} alt="product.png" height={300} width={300} className="object-fill w-full " /> */}
+        <DynamicImage src={DefaultProductImageUrl} alt="product.png" height={400} width={300} className="object-fill w-full " />
         <div className="px-2">
           <div className="flex justify-between items-center">
             <p className="text-gray-700 text-sm md:text-base font-medium">Shiny Dress</p>

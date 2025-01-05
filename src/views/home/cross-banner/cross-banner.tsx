@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import DynamicImage from 'common-components/dynamic-image/dynamic-image';
 
 type Props = {}
 
@@ -22,12 +23,13 @@ const CrossBanner = (props: Props) => {
     // fade: true,
   };
 
+
   return (
     <div className="">
       <Slider {...settings}>
-        <Image src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} quality={100} blurDataURL='' className='w-full max-h-[300px] object-fill rounded-lg' />
-        <Image src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} quality={100} blurDataURL='' className='w-full max-h-[300px] object-fill rounded-lg' />
-        <Image src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} quality={100} blurDataURL='' className='w-full max-h-[300px] object-fill rounded-lg' />
+        <DynamicImage src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} quality={100} className='w-full max-h-[300px] object-fill rounded-lg' />
+        <DynamicImage src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} quality={100} className='w-full max-h-[300px] object-fill rounded-lg' />
+        <DynamicImage src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} quality={100} className='w-full max-h-[300px] object-fill rounded-lg' />
       </Slider >
     </div >
   )

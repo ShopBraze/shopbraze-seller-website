@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { SetStateAction, useRef, useState } from "react";
+import DynamicImage from "common-components/dynamic-image/dynamic-image";
 
 
 type ProductImageCarouselProps = {
@@ -53,7 +54,7 @@ const ProductImageCarousel = ({ productData }: ProductImageCarouselProps) => {
                   goToSlide(index)
                 }}
               >
-                <Image src={url} alt="product.png" height={250} width={380} className="rounded-sm" />
+                <DynamicImage src={url} alt="product.png" height={250} width={380} className="rounded-sm" />
               </div>
             )
           })
@@ -68,7 +69,7 @@ const ProductImageCarousel = ({ productData }: ProductImageCarouselProps) => {
             productData?.images?.map((url: string, index: number) => {
               return (
                 <div className={`cursor-pointer`} key={index + "1"}>
-                  <Image src={url} alt="product.png" height={300} width={450} className="rounded-sm w-full" />
+                  <DynamicImage src={url} alt="product.png" height={300} width={450} className="rounded-sm w-full" quality={100} />
                 </div>
               )
             })
