@@ -27,9 +27,9 @@ const CrossBanner = (props: Props) => {
   return (
     <div className="">
       <Slider {...settings}>
-        <DynamicImage src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} className='w-full max-h-[300px] object-fill rounded-lg' />
-        <DynamicImage src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} className='w-full max-h-[300px] object-fill rounded-lg' />
-        <DynamicImage src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} className='w-full max-h-[300px] object-fill rounded-lg' />
+        <DynamicImage src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} loading='lazy' className='w-full max-h-[300px] object-fill rounded-lg' />
+        <DynamicImage src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} loading='lazy' className='w-full max-h-[300px] object-fill rounded-lg' />
+        <DynamicImage src={CrossBannerDefaultImageUrl} alt="cross-banner.png" height={400} width={1500} loading='lazy' className='w-full max-h-[300px] object-fill rounded-lg' />
       </Slider >
     </div >
   )

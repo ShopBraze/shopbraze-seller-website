@@ -7,8 +7,3 @@ export async function getBase64Image(imageUrl: string) {
     reader.readAsDataURL(blob);
   });
 }
-
-
-getBase64Image("https://res.cloudinary.com/dwr2iupak/image/upload/v1735723628/cross-banner-default-image_1_pf58rf.png").then((data) => {
-  console.log(data)
-})
