@@ -6,6 +6,7 @@ import WishlistIcon from "assets/icons/navbar/wishlist-icon.svg"
 import CartIcon from "assets/icons/navbar/cart-icon.svg"
 import ProfileIcon from "assets/icons/navbar/profile-icon.svg"
 import Image from "next/image"
+import Link from "next/link"
 
 const DesktopNavbar = () => {
 
@@ -29,11 +30,11 @@ const DesktopNavbar = () => {
 
   return (
     <div className="flex items-center gap-6 justify-between">
-      <div className="space-y-[2px]">
+
+      <Link href={`/`} className="space-y-[2px]">
         <Image src={WebsiteLogo} alt="shopbraze-logo.svg" className="h-[36px] w-[70px]" />
         <p className="text-primary-700 text-sm font-semibold">SHOP BRAZE</p>
-      </div>
-
+      </Link>
       <div className="flex items-center gap-6">
         {["Closeout Sale", "Topwear", "Bottomwear", "Casualwear"]?.map((item, index) => {
           return (

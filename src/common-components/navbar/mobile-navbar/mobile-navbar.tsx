@@ -12,6 +12,7 @@ import ArrowRight from "assets/icons/chevron-right-white.svg"
 import Image from "next/image"
 
 import { useState } from "react"
+import Link from "next/link"
 
 const MobileNavbar = () => {
 
@@ -50,10 +51,10 @@ const MobileNavbar = () => {
         <Button onClick={handleToggleSidebar}>
           <Image src={ThreeDashBarIcon} alt="nav-dash.svg" />
         </Button>
-        <div className="space-y-[2px]">
+        <Link href={`/`} className="space-y-[2px]">
           <Image src={WebsiteLogo} alt="shopbraze-logo.svg" className="h-[36px] w-[70px]" />
           <p className="text-primary-700 text-xs sm:text-sm font-semibold">SHOP BRAZE</p>
-        </div>
+        </Link>
       </div>
 
       <div className="flex items-center gap-3">
