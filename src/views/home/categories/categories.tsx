@@ -17,11 +17,9 @@ const Categories = ({ }: CategoriesProps) => {
       <div className='flex gap-5 xs:justify-evenly overflow-scroll scrollbar-hide cursor-pointer'>
         {ProductsCategoriesData?.map((category) => {
           return (
-            <Link href={'/products'}>
-              <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                <DynamicImage src={category?.image} alt="product.name.webp" height={112} width={112} className="shrink-0 h-14 w-14 md:h-28 md:w-28 rounded-full" />
-                <p className="text-xs md:text-sm text-gray-800">{category?.name}</p>
-              </div>
+            <Link href={'/products'} className="flex flex-col items-center gap-2 flex-shrink-0">
+              <DynamicImage src={category?.image} alt="product.name.webp" height={112} width={112} className="shrink-0 h-14 w-14 md:h-28 md:w-28 rounded-full" />
+              <p className="text-xs md:text-sm text-gray-800">{category?.name}</p>
             </Link>
           )
         })}
