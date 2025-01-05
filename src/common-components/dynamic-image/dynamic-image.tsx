@@ -21,7 +21,7 @@ export default function DynamicImage({ src, alt, height, width, quality, classNa
       const blurURL = await getBase64Image(src);
       setBlurDataURL(blurURL);
     };
-    fetchBlurDataURL();
+    if (src) fetchBlurDataURL();
   }, [src]);
 
   return (
