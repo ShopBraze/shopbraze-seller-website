@@ -13,7 +13,7 @@ const ProductIdContainer = ({ productData }: ProductIdContainerProps) => {
   console.log(productData)
   return (
     <Layout>
-      <div className="px-3 md:px-10 pt-2 md:pt-4 space-y-6 md:space-y-10">
+      <div className="px-3 md:px-10 pt-2 md:pt-4 space-y-8 md:space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
           <ProductImageCarousel productData={productData} />
           <ProductInfoContainer productData={productData} />

@@ -21,13 +21,13 @@ const ProductTitleAndPrice = ({ productData }: ProductTitleAndPriceProps) => {
           <p className="text-gray-600 text-sm md:text-xl line-through">₹2350</p>
         </div>
         <div className="">
-          <p className="text-sm md:text-base text-primary-700 font-bold">65% OFF</p>
+          <p className="text-sm md:text-base font-bold primaryColor">65% OFF</p>
         </div>
       </div>
       <p className="mt-1 md:mt-2 text-xs md:text-sm text-gray-500 font-semibold">Inclusive of all Taxes</p>
       <div className="pt-2 md:pt-4 flex items-center gap-4">
-        <div className="py-1 px-2 bg-primary-200 text-xs text-[#fff] rounded-sm">Free Delivery</div>
-        <div className="py-1 px-2 bg-primary-200 text-xs text-[#fff] rounded-sm">View Available Offers</div>
+        <div className="py-1 px-2 text-xs text-[#fff] rounded-sm primaryBgColor border-dashed border">Free Delivery</div>
+        <div className="py-1 px-2 text-xs text-[#fff] rounded-sm primaryBgColor primaryBgColor border-dashed border">View Available Offers</div>
       </div>
     </div>
   )

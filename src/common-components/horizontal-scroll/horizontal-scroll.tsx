@@ -103,7 +103,7 @@ const HorizontalScroll = ({
         <Button
           onClick={scrollLeft}
           disabled={isLeftDisabled}
-          className={`flex justify-center items-center h-8 w-8 absolute top-1/2 left-0 transform -translate-y-1/2 bg-primary-800 p-2 rounded-full z-10 ${isLeftDisabled ? "opacity-50 cursor-not-allowed" : ""
+          className={`flex justify-center items-center h-8 w-8 absolute top-1/2 left-0 transform -translate-y-1/2 p-2 rounded-full z-10 primaryBgColor ${isLeftDisabled ? "opacity-50 cursor-not-allowed" : ""
             }`}
         >
           <Image
@@ -127,7 +127,7 @@ const HorizontalScroll = ({
         <Button
           onClick={scrollRight}
           disabled={isRightDisabled}
-          className={`flex justify-center items-center h-8 w-8 absolute top-1/2 right-0 transform -translate-y-1/2 bg-primary-800 p-2 rounded-full z-10 ${isRightDisabled ? "opacity-50 cursor-not-allowed" : ""
+          className={`flex justify-center items-center h-8 w-8 absolute top-1/2 right-0 transform -translate-y-1/2 p-2 rounded-full z-10 primaryBgColor ${isRightDisabled ? "opacity-50 cursor-not-allowed" : ""
             }`}
         >
           <Image src={ArrowLeftIcon} alt="arrow-right.svg" className="h-6 w-6" />
