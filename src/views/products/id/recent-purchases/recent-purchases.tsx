@@ -10,6 +10,7 @@ type RecentPurchasesProps = {}
 const RecentPurchases = ({ }: RecentPurchasesProps) => {
 
   var settings = {
+    dots: true,
     arrows: false,
     infinite: true,
     slidesToShow: 4,
@@ -46,7 +47,7 @@ const RecentPurchases = ({ }: RecentPurchasesProps) => {
           {...settings}
         >
           {
-            [...new Array(20)].map((_, index) => {
+            [...new Array(8)].map((_, index) => {
               return (
                 <div className="pr-3">
                   <div className="px-2 py-1.5 rounded-md !flex gap-3 border border-gray-200" key={index}>
