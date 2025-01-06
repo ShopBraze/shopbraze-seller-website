@@ -7,12 +7,13 @@ import CartIcon from "assets/icons/navbar/cart-icon.svg"
 import ProfileIcon from "assets/icons/navbar/profile-icon.svg"
 import ThreeDashBarIcon from "assets/icons/navbar/three-dash-horizontal-icon.svg"
 import CrossIcon from "assets/icons/navbar/close-nav-icon.svg"
-import MyAccountIcon from "assets/icons/navbar/my-account-icon-mobile.svg"
 import ArrowRight from "assets/icons/chevron-right-white.svg"
 import Image from "next/image"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import Link from "next/link"
+import { MyAccountIcon } from "assets/icons/navbar/my-account-icon-mobile"
+import useClickOutside from "core/hooks/use-click-outside"
 
 const MobileNavbar = () => {
 
@@ -40,10 +41,13 @@ const MobileNavbar = () => {
     }
   ]
 
+  const sidebarRef = useRef<HTMLDivElement | null>(null)
   const [openSidebar, setOpenSidebar] = useState(false)
   const handleToggleSidebar = () => {
     setOpenSidebar(!openSidebar)
   }
+
+  useClickOutside(sidebarRef as React.RefObject<HTMLElement>, () => setOpenSidebar(false));
 
   return (<>
     <div className="flex justify-between items-center">
@@ -53,7 +57,7 @@ const MobileNavbar = () => {
         </Button>
         <Link href={`/`} className="space-y-[2px]">
           <Image src={WebsiteLogo} alt="shopbraze-logo.svg" className="h-[36px] w-[70px]" />
-          <p className="text-primary-700 text-xs sm:text-sm font-semibold">SHOP BRAZE</p>
+          <p className="text-xs sm:text-sm font-semibold primaryColor">SHOP BRAZE</p>
         </Link>
       </div>
 
@@ -71,10 +75,13 @@ const MobileNavbar = () => {
     </div>
 
     <div className={`fixed top-0 bottom-0 overflow-hidden left-0 bg-[#fff] w-[300px]  border border-gray-200 transform transition-transform duration-300 ease-in-out ${openSidebar ? "translate-x-0" : "-translate-x-full"
-      }`}>
-      <div className="space-y-3 bg-primary-700 p-3">
+      }`}
+      id="sidebar-nav"
+      ref={sidebarRef}
+    >
+      <div className="space-y-3 p-3 primaryBgColor">
         <div className="w-full flex  justify-between">
-          <Image src={MyAccountIcon} alt="my-account.svg" onClick={() => { }} className="cursor-pointer" />
+          <MyAccountIcon className="dynamicIcons cursor-pointer" />
           <Image src={CrossIcon} alt="cross.svg" onClick={handleToggleSidebar} className="cursor-pointer" />
         </div>
         <div className="flex justify-between items-center">
@@ -87,7 +94,7 @@ const MobileNavbar = () => {
         {
           ["Closeout Sale", "Bottomwear", "Casualwear", "Topwear"].map((item, index) => {
             return (
-              <p className="text-sm md:text-base font-medium cursor-pointer hover:text-primary-400 text-gray-500" key={index}
+              <p className="text-sm md:text-base font-medium cursor-pointer text-gray-500 hover-primaryColor" key={index}
                 onClick={() => {
                   handleToggleSidebar()
                 }}>

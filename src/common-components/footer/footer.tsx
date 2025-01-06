@@ -31,7 +31,7 @@ const Footer = () => {
       <div className="space-y-3 md:space-y-4 text-center md:text-left">
         <div className="pt-4 flex flex-col gap-y-1 justify-center items-center md:items-start">
           <Image src={WebsiteLogo} alt="shopbraze.png" className="h-[50px] md:h-auto" />
-          <p className="text-sm md:text-lg font-bold text-primary-700">SHOP BRAZE</p>
+          <p className="text-sm md:text-lg font-bold text-primary-700 primaryColor">SHOP BRAZE</p>
         </div>
         <p className="text-sm md:text-base text-gray-500 font-medium">Making the world a better cloth through our <br className="hidden md:block" /> shopbraze and make a cheerful</p>
         <div className="flex gap-6 items-center justify-center md:justify-normal">
@@ -50,7 +50,7 @@ const Footer = () => {
           {
             ["Closeout Sale", "Diiscount Sale", "Topwear", "Bottomwear"].map((item, index) => {
               return (
-                <p className="text-sm md:text-base font-medium cursor-pointer hover:text-primary-400 text-gray-500" key={index}>{item}</p>
+                <p className="text-sm md:text-base font-medium cursor-pointer text-gray-500 hover-primaryColor" key={index}>{item}</p>
               )
             })
           }
@@ -59,7 +59,7 @@ const Footer = () => {
           {
             ["T-shirt", "Shirts", "Girls Cotton dress", "Modern dress", "Sweater"].map((item, index) => {
               return (
-                <p className="text-sm md:text-base font-medium cursor-pointer hover:text-primary-400 text-gray-500" key={index} >{item}</p>
+                <p className="text-sm md:text-base font-medium cursor-pointer text-gray-500 hover-primaryColor" key={index} >{item}</p>
               )
             })
           }
@@ -68,7 +68,7 @@ const Footer = () => {
           {
             ["Claim", "Privacy", "Terms"].map((item, index) => {
               return (
-                <p className="text-sm md:text-base font-medium cursor-pointer hover:text-primary-400 text-gray-500" key={index}>{item}</p>
+                <p className="text-sm md:text-base font-medium cursor-pointer text-gray-500 hover-primaryColor" key={index}>{item}</p>
               )
             })
           }

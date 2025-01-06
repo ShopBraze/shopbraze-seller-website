@@ -33,12 +33,12 @@ const DesktopNavbar = () => {
 
       <Link href={`/`} className="space-y-[2px]">
         <Image src={WebsiteLogo} alt="shopbraze-logo.svg" className="h-[36px] w-[70px]" />
-        <p className="text-primary-700 text-sm font-semibold">SHOP BRAZE</p>
+        <p className="text-sm font-semibold primaryColor">SHOP BRAZE</p>
       </Link>
       <div className="flex items-center gap-6">
         {["Closeout Sale", "Topwear", "Bottomwear", "Casualwear"]?.map((item, index) => {
           return (
-            <Button className="text-sm xl:text-base font-medium text-gray-600 hover:text-primary-700 hover:border-b-2 border-primary-700 " key={index}>{item}</Button>
+            <Button className="text-sm xl:text-base font-medium text-gray-600 hover:border-b-2 hover-primaryColor primaryBorderColor" key={index}>{item}</Button>
           )
         })}
       </div>
@@ -53,7 +53,7 @@ const DesktopNavbar = () => {
               return (
                 <div className="cursor-pointer flex flex-col items-center gap-y-1 px-1" key={navItem?.id}>
                   <Image src={navItem?.icon} alt={`${navItem?.name}.svg`} />
-                  <p className="text-xs xl:text-sm text-gray-700 hover:text-primary-600">{navItem?.name}</p>
+                  <p className="text-xs xl:text-sm text-gray-700 hover-primaryColor">{navItem?.name}</p>
                 </div>
               )
             })

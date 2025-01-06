@@ -16,8 +16,8 @@ const ActionCta = ({ }: ActionCtaProps) => {
   return (
     <>
       <div className="mt-5 flex w-full gap-3 sm:gap-5" id="product-page-action-cta">
-        <Button className="w-full py-2.5 rounded-md border border-primary-600 text-gray-700 text-sm font-semibold">ADD TO CART</Button>
-        <Button className="w-full py-2.5 rounded-md bg-primary-700 text-[#fff] text-sm font-semibold">BUY NOW</Button>
+        <Button className="w-full py-2.5 rounded-md text-gray-700 text-sm font-semibold border primaryBorderColor">ADD TO CART</Button>
+        <Button className="w-full py-2.5 rounded-md text-[#fff] text-sm font-semibold primaryBgColor">BUY NOW</Button>
       </div>
 
       {
@@ -30,7 +30,7 @@ const ActionCta = ({ }: ActionCtaProps) => {
               optionsContainerClassName='-top-[190px]'
               optionLabelClassName='text-sm'
             />
-            <Button className="w-full py-2.5 rounded-md bg-primary-700 text-[#fff] text-sm font-semibold">
+            <Button className="w-full py-2.5 rounded-md text-[#fff] text-sm font-semibold primaryBgColor">
               ₹1,999 &nbsp; |  &nbsp; BUY NOW
             </Button>
           </div>

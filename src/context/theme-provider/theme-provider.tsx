@@ -1,12 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { FontStyles, ThemeContextProps } from "./theme-provider.type";
 
 const customPromise = new Promise<FontStyles>((resolve) => {
   setTimeout(() => {
     const data: FontStyles = {
       color: {
-        red: "0",
-        green: "90",
-        blue: "67",
+        // red: "0",
+        // green: "128",
+        // blue: "96",
+        red: "44",
+        green: "62",
+        blue: "80",
       },
       font_family: {
         title1: { name: "Podkova", weight: "500" },
@@ -17,59 +21,62 @@ const customPromise = new Promise<FontStyles>((resolve) => {
       },
     };
     resolve(data);
-  }, 0);
+  }, 1000);
 });
 
-type FontFamily = {
-  name: string;
-  weight: string;
-};
-
-type FontStyles = {
-  color: { red: string; green: string; blue: string };
-  font_family: Record<string, FontFamily>;
-};
-
-type ThemeContextProps = {
-  fontStyles: FontStyles | null;
-  setFontStyles: (styles: FontStyles) => void;
-};
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [fontStyles, setFontStyles] = useState<FontStyles | null>(null);
 
-  useEffect(() => {
-    const fetchFontStyles = async () => {
-      try {
+  const fetchFontStyles = async () => {
+    try {
+      // Check cached data
+      const cachedData = localStorage?.getItem("fontStyles");
+      const cachedFontStyles: FontStyles | null = cachedData ? JSON.parse(cachedData) : null;
 
-        const data: FontStyles = await customPromise;
-        setFontStyles(data);
+      const fetchedFontStyles: FontStyles = await customPromise;
 
-        // Set CSS variables in :root for fonts and color
-        const root = document.documentElement;
+      // Compare fetched data with cached data
+      const isEqual = JSON.stringify(cachedFontStyles) === JSON.stringify(fetchedFontStyles);
 
-        // Set font-family and font-weight variables
-        Object.entries(data?.font_family)?.forEach(([key, font]) => {
-          root.style.setProperty(`--font-${key}`, `'${font?.name}', sans-serif`);
-          root.style.setProperty(`--font-${key}-weight`, font?.weight);
-
-          // Dynamically load the font from Google Fonts
-          const link = document.createElement("link");
-          link.href = `https://fonts.googleapis.com/css2?family=${font?.name}:wght@400;500;600;700;800;900&display=swap`;
-          link.rel = "stylesheet";
-          document.head.appendChild(link);
-        });
-
-        // Set color variables for primary color
-        const { red, green, blue } = data.color;
-        root.style.setProperty(`--color-primary`, `rgb(${red}, ${green}, ${blue})`);
-      } catch (error) {
-        console.error("Failed to fetch font styles:", error);
+      if (!isEqual) {
+        // Update cache if data is different
+        localStorage?.setItem("fontStyles", JSON.stringify(fetchedFontStyles));
+        applyStyles(fetchedFontStyles);
+        setFontStyles(fetchedFontStyles);
+      } else if (cachedFontStyles) {
+        // Use cached data if it matches
+        applyStyles(cachedFontStyles);
+        setFontStyles(cachedFontStyles);
       }
-    };
+    } catch (error) {
+      console.error("Failed to fetch font styles:", error);
+    }
+  };
 
+  const applyStyles = (data: FontStyles) => {
+    const root = document.documentElement;
+
+    // Set font-family and font-weight variables
+    Object.entries(data.font_family).forEach(([key, font]) => {
+      root.style.setProperty(`--font-${key}`, `'${font.name}', sans-serif`);
+      root.style.setProperty(`--font-${key}-weight`, font.weight);
+
+      // Dynamically load the font from Google Fonts
+      const link = document.createElement("link");
+      link.href = `https://fonts.googleapis.com/css2?family=${font.name}:wght@400;500;600;700;800;900&display=swap`;
+      link.rel = "stylesheet";
+      document.head.appendChild(link);
+    });
+
+    // Set color variables
+    const { red, green, blue } = data.color;
+    root.style.setProperty("--color-primary", `rgb(${red}, ${green}, ${blue})`);
+  };
+
+  useEffect(() => {
     fetchFontStyles();
   }, []);
 

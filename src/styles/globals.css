@@ -99,13 +99,24 @@ body {
   color: var(--color-primary);
 }
 
+.hover-primaryColor:hover {
+  color: var(--color-primary);
+}
+
 .primaryBgColor {
   background-color: var(--color-primary);
 }
 
+.primaryBorderColor {
+  border-color: var(--color-primary);
+}
 .discountTagSvg {
   fill: var(--color-primary);
   fill-opacity: 0.7;
+}
+
+.dynamicIcons {
+  fill: var(--color-primary);
 }
 
 .slick-slider .slick-arrow:before {
