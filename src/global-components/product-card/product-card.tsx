@@ -18,7 +18,7 @@ const ProductCard = ({ }: ProductCardProps) => {
         <div className="px-2">
           <div className="flex justify-between items-center">
             <p className="text-gray-700 text-sm md:text-base font-medium">Shiny Dress</p>
-            <div className="py-1 px-1.5 md:px-2 rounded-md flex gap-1 items-center justify-center bg-primary-700">
+            <div className="py-1 px-1.5 md:px-2 rounded-md flex gap-1 items-center justify-center bg-primary-700 primaryBgColor">
               <Image src={StarIcon} alt="star.svg" />
               <p className="text-[#fff] text-xs md:text-sm">4.5 | 21</p>
             </div>

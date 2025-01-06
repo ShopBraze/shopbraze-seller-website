@@ -5,6 +5,7 @@ import Categories from './categories/categories'
 import CloseOutSale from './closeout-sale/closeout-sale'
 import DiscountSale from './discount-sale/discount-sale'
 import FastestSale from './fastest-sale/fastest-sale'
+import Modal from 'common-components/modal/modal'
 
 type Props = {}
 

@@ -19,16 +19,13 @@ html,
 * {
   scroll-behavior: smooth;
 }
-html {
-  overflow-y: scroll;
-}
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Quick Sand";
-  overflow-x: hidden;
+  scrollbar-gutter: stable;
 }
 
 /* Load variable Inter font file : All font weights and styles */
@@ -70,27 +67,27 @@ body {
   /* Firefox */
 }
 
-.title1 {
+.title1Text {
   font-family: var(--font-title1);
   font-weight: var(--font-title1-weight);
 }
 
-.title2 {
+.title2Text {
   font-family: var(--font-title2);
   font-weight: var(--font-title2-weight);
 }
 
-.title3 {
+.title3Text {
   font-family: var(--font-title3);
   font-weight: var(--font-title3-weight);
 }
 
-.heading {
+.headingText {
   font-family: var(--font-heading);
   font-weight: var(--font-heading-weight);
 }
 
-.body {
+.bodyText {
   font-family: var(--font-body);
   font-weight: var(--font-body-weight);
 }
@@ -99,13 +96,33 @@ body {
   color: var(--color-primary);
 }
 
+.hover-primaryColor:hover {
+  color: var(--color-primary);
+}
+
+.hover-primaryBorderColor:hover {
+  border-color: var(--color-primary);
+}
+
+.hover-primaryBgColor:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
 .primaryBgColor {
   background-color: var(--color-primary);
 }
 
+.primaryBorderColor {
+  border-color: var(--color-primary);
+}
 .discountTagSvg {
   fill: var(--color-primary);
   fill-opacity: 0.7;
+}
+
+.dynamicIcons {
+  fill: var(--color-primary);
 }
 
 .slick-slider .slick-arrow:before {

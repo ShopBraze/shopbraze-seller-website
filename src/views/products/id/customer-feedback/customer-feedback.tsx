@@ -6,7 +6,7 @@ type Props = {}
 
 const CustomerFeedback = (props: Props) => {
   return (
-    <div className='space-y-6 md:space-y-8'>
+    <div className='space-y-6 md:space-y-8 pt-5'>
       <h1 className="text-center text-xl md:text-2xl font-semibold text-gray-800">Customer Feedback</h1>
       <div className='columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-2 md:gap-5'>
         {

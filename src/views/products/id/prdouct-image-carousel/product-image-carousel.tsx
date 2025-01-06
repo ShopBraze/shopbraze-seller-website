@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Slider from 'react-slick';
 
 import "slick-carousel/slick/slick.css";
@@ -47,7 +46,7 @@ const ProductImageCarousel = ({ productData }: ProductImageCarouselProps) => {
         {
           productData?.images?.map((url: string, index: number) => {
             return (
-              <div className={`${activeSlideIndex === index ? "border-2 border-primary-600" : ''} cursor-pointer`}
+              <div className={`${activeSlideIndex === index ? "border-2 primaryBorderColor rounded-sm" : ''} cursor-pointer`}
                 key={index}
                 onClick={() => {
                   handleActiveSlideIndex(index)

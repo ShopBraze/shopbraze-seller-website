@@ -1,4 +1,4 @@
-import SizeGuideIcon from "assets/icons/product-details/size-guide-icon.svg"
+import { SizeGuideIcon } from "assets/icons/product-details/size-guide-icon"
 import Image from "next/image"
 type Props = {}
 
@@ -7,10 +7,10 @@ const ProductSizes = (props: Props) => {
     <div className="pt-4 md:pt-6 space-y-1.5 md:space-y-3">
       <div className="flex items-center gap-3">
         <p className="text-base md:text-lg font-medium">Size</p>
-        <div className="flex items-center gap-2 text-xs md:text-sm font-semibold text-primary-500 cursor-pointer">
+        <div className="flex items-center gap-2 text-xs md:text-sm font-semibold cursor-pointer primaryColor">
           <span className="">--</span>
           <span>
-            <Image src={SizeGuideIcon} alt="size-icon.svg" />
+            <SizeGuideIcon className="dynamicIcons" />
           </span>
           Size Guide
         </div>
