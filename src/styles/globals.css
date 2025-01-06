@@ -70,27 +70,27 @@ body {
   /* Firefox */
 }
 
-.title1 {
+.title1Text {
   font-family: var(--font-title1);
   font-weight: var(--font-title1-weight);
 }
 
-.title2 {
+.title2Text {
   font-family: var(--font-title2);
   font-weight: var(--font-title2-weight);
 }
 
-.title3 {
+.title3Text {
   font-family: var(--font-title3);
   font-weight: var(--font-title3-weight);
 }
 
-.heading {
+.headingText {
   font-family: var(--font-heading);
   font-weight: var(--font-heading-weight);
 }
 
-.body {
+.bodyText {
   font-family: var(--font-body);
   font-weight: var(--font-body-weight);
 }
