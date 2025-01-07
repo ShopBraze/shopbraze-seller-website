@@ -1,7 +1,9 @@
 import { Dialog, Transition } from '@headlessui/react';
 import React, { Fragment, useEffect } from 'react';
 import useModal from './use-modal';
+import CloseIcon from "assets/icons/modal-close-icon.svg"
 import Button from 'common-components/button/button';
+import Image from 'next/image';
 
 type ModalProps = {
   children: (props: { open: boolean; handleOpenToggle: () => void }) => React.ReactNode;
@@ -30,11 +32,12 @@ type ModalDialogProps = {
   children: React.ReactNode;
   className?: string;
   overlayClass?: string;
+  showCloseIcon?: boolean
 };
 
 
 
-Modal.Dialog = ({ open, handleOpenToggle, closeOnOutsideClick, children, className, overlayClass }: ModalDialogProps) => {
+Modal.Dialog = ({ open, handleOpenToggle, closeOnOutsideClick, children, className, overlayClass, showCloseIcon }: ModalDialogProps) => {
   return (
     <Transition show={open} as={Fragment}>
       <Dialog
@@ -46,7 +49,7 @@ Modal.Dialog = ({ open, handleOpenToggle, closeOnOutsideClick, children, classNa
         onClick={closeOnOutsideClick ? handleOpenToggle : undefined}
         transition
       >
-        <div className="flex justify-center h-screen items-center">
+        <div className="relative flex justify-center h-screen items-center">
 
           {/* Overlay */}
           <div className={`fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity ${overlayClass}`} />
@@ -54,7 +57,13 @@ Modal.Dialog = ({ open, handleOpenToggle, closeOnOutsideClick, children, classNa
           {/* Main Content */}
           <div className={`${className} z-[60] fixed left-0 bottom-0 md:relative inline-block `} onClick={(e) => { e?.stopPropagation() }}>
             {children}
+            {
+              showCloseIcon && <div className="h-8 w-8 md:h-6 md:w-6 flex justify-center bg-[#fff] rounded-full absolute right-[50%] md:-right-3 -top-2.5 cursor-pointer">
+                <Image src={CloseIcon} alt="close.svg" onClick={handleOpenToggle} className='' />
+              </div>
+            }
           </div>
+
         </div>
       </Dialog>
     </Transition>

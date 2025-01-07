@@ -11,7 +11,9 @@ type DynamicImageProps = {
   height: number | `${number}` | undefined;
   width: number | `${number}` | undefined;
   loading?: "eager" | "lazy" | undefined;
-  zoomOnHover?: boolean; // New prop
+  onClick?: any
+  zoomOnHover?: boolean;
+  zoomerSize?: { width: number, height: number }
 };
 
 export default function DynamicImage({
@@ -23,8 +25,14 @@ export default function DynamicImage({
   className,
   loading,
   zoomOnHover = false,
+  onClick,
+  zoomerSize
 }: DynamicImageProps) {
   const [blurDataURL, setBlurDataURL] = useState<any>(null);
+  const [showMagnifier, setShowMagnifier] = useState(false);
+  const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
+  const [[x, y], setXY] = useState([0, 0]);
+  const [magnifierSize, setMagnifierSize] = useState(zoomerSize || { width: 300, height: 350 })
 
   useEffect(() => {
     const fetchBlurDataURL = async () => {
@@ -33,18 +41,7 @@ export default function DynamicImage({
     };
 
     if (src) fetchBlurDataURL();
-
-    if (window.innerWidth <= 560) {
-      setMagnifierSize({ width: 250, height: 300 });
-    } else {
-      setMagnifierSize({ width: 350, height: 400 });
-    }
   }, [src]);
-
-  const [showMagnifier, setShowMagnifier] = useState(false);
-  const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
-  const [[x, y], setXY] = useState([0, 0]);
-  const [magnifierSize, setMagnifierSize] = useState({ width: 350, height: 400 })
 
   const mouseEnter = (e: any) => {
     const el = e.currentTarget;
@@ -88,6 +85,7 @@ export default function DynamicImage({
         onMouseEnter={(e) => mouseEnter(e)}
         onMouseLeave={(e) => mouseLeave(e)}
         onMouseMove={(e) => mouseMove(e)}
+        onClick={onClick ? onClick : undefined}
       />
       <div
         style={{
@@ -108,7 +106,6 @@ export default function DynamicImage({
           backgroundPositionX: `${-x * zoomLevel + magnifierSize.width / 2}px`,
           backgroundPositionY: `${-y * zoomLevel + magnifierSize.height / 2}px`,
         }}
-        className="hidden md:block"
       />
     </div>
   );
