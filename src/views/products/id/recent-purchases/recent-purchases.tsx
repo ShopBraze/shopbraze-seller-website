@@ -47,7 +47,7 @@ const RecentPurchases = ({ }: RecentPurchasesProps) => {
           {...settings}
         >
           {
-            [...new Array(8)].map((_, index) => {
+            [...new Array(6)].map((_, index) => {
               return (
                 <div className="pr-3">
                   <div className="px-2 py-1.5 rounded-md !flex gap-3 border border-gray-200" key={index}>
