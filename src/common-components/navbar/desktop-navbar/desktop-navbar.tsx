@@ -14,17 +14,18 @@ const DesktopNavbar = () => {
     {
       id: "1",
       icon: WishlistIcon,
-      name: "Wishlist"
+      name: "Wishlist",
     },
     {
       id: "2",
       icon: CartIcon,
-      name: "Cart"
+      name: "Cart",
+      badgeValue: 7
     },
     {
       id: "3",
       icon: ProfileIcon,
-      name: "Profile"
+      name: "Profile",
     }
   ]
 
@@ -51,9 +52,16 @@ const DesktopNavbar = () => {
           {
             DesktopNavConstants?.map((navItem) => {
               return (
-                <div className="cursor-pointer flex flex-col items-center gap-y-1 px-1" key={navItem?.id}>
+                <div className="relative cursor-pointer flex flex-col items-center gap-y-1 px-1" key={navItem?.id}>
                   <Image src={navItem?.icon} alt={`${navItem?.name}.svg`} />
                   <p className="text-xs xl:text-sm text-gray-700 hover-primaryColor">{navItem?.name}</p>
+                  {
+                    navItem?.badgeValue && navItem?.badgeValue > 0 ?
+                      <div className="absolute -right-0.5 -top-2.5 primaryBgColor text-[#fff] rounded-full min-w-5 min-h-5 py-0 px-1.5 flex justify-center text-sm">
+                        {navItem?.badgeValue}
+                      </div>
+                      : <></>
+                  }
                 </div>
               )
             })

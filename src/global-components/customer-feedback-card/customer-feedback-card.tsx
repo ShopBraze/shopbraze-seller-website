@@ -20,7 +20,7 @@ const CustomerFeedbackCard = ({ hasImage }: CustomerFeedbackCardProps) => {
       )}
       <div className="p-1.5 md:p-3 space-y-1.5 md:space-y-3">
         <p className="text-gray-800 text-sm md:text-base font-semibold">Radheshyam</p>
-        <div className="flex flex-col gap-y-1 sm:flex-row md:justify-between md:items-center">
+        <div className="flex flex-col gap-y-1 sm:flex-row sm:justify-between sm:items-center">
           <div className="flex gap-1">
             {[...new Array(5)].map((_, index) => (
               <Image src={StartRatingIcon} alt="star.svg" key={index} />
