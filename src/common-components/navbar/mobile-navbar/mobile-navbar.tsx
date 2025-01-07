@@ -26,12 +26,14 @@ const MobileNavbar = () => {
     {
       id: "1",
       icon: WishlistIcon,
-      name: "Wishlist"
+      name: "Wishlist",
+      badgeValue: 0,
     },
     {
       id: "2",
       icon: CartIcon,
-      name: "Cart"
+      name: "Cart",
+      badgeValue: 2,
 
     },
     {
@@ -65,8 +67,15 @@ const MobileNavbar = () => {
         {
           MobileNavConstants?.map((navItem) => {
             return (
-              <div className="cursor-pointer flex flex-col items-center gap-y-1 px-1" key={navItem?.id}>
+              <div className="relative cursor-pointer flex flex-col items-center gap-y-1 px-1" key={navItem?.id}>
                 <Image src={navItem?.icon} alt={`${navItem?.name}.svg`} />
+                {
+                  navItem?.badgeValue && navItem?.badgeValue > 0 ?
+                    <div className="absolute -right-1.5 -top-2.5 primaryBgColor text-[#fff] rounded-full min-w-5 min-h-5 py-0 px-1.5 flex justify-center text-sm">
+                      {navItem?.badgeValue}
+                    </div>
+                    : <></>
+                }
               </div>
             )
           })

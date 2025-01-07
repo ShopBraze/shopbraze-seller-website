@@ -10,7 +10,6 @@ type ProductIdContainerProps = {
 }
 
 const ProductIdContainer = ({ productData }: ProductIdContainerProps) => {
-  console.log(productData)
   return (
     <Layout>
       <div className="px-3 md:px-10 pt-2 md:pt-4 space-y-8 md:space-y-12">

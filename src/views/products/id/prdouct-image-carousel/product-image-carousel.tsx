@@ -68,7 +68,7 @@ const ProductImageCarousel = ({ productData }: ProductImageCarouselProps) => {
             productData?.images?.map((url: string, index: number) => {
               return (
                 <div className={`cursor-pointer`} key={index + "1"}>
-                  <DynamicImage src={url} alt="product.png" height={300} width={450} className="rounded-sm w-full" quality={100} />
+                  <DynamicImage src={url} alt="product.png" height={300} width={450} loading='eager' className="rounded-sm w-full" quality={100} zoomOnHover={true} />
                 </div>
               )
             })
