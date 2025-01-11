@@ -16,7 +16,7 @@ const CartIndexContainer = (props: Props) => {
           <OffersDetails className="lg:hidden" />
           <CartProductsContainer className="lg:flex-[0.5]" />
           <div className="space-y-3 w-full fixed bottom-0 left-0 right-0 lg:relative lg:flex-[0.4]">
-            <OffersDetails className="hidden lg:block" />
+            <OffersDetails className="hidden lg:flex" />
             <SubTotalAndCheckOut />
           </div>
         </div>
