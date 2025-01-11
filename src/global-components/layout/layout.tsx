@@ -4,10 +4,11 @@ import Navbar from '../../common-components/navbar/navbar'
 import Footer from '../../common-components/footer/footer'
 
 type LayoutProps = {
-  children: React.ReactNode
+  children: React.ReactNode,
+  hideFooter?: boolean
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, hideFooter = false }: LayoutProps) => {
   return (
     <main className='min-h-[100vh] pb-40 md:pb-10'>
       <header className="sticky top-0 bg-[#fff] z-30">
@@ -15,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
         <Navbar />
       </header>
       {children}
-      <Footer />
+      {!hideFooter && <Footer />}
     </main>
   )
 }

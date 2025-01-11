@@ -7,27 +7,32 @@ import CartIcon from "assets/icons/navbar/cart-icon.svg"
 import ProfileIcon from "assets/icons/navbar/profile-icon.svg"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
+
+
+const DesktopNavConstants = [
+  // {
+  //   id: "1",
+  //   icon: WishlistIcon,
+  //   name: "Wishlist",
+  // },
+  {
+    id: "2",
+    icon: CartIcon,
+    name: "Cart",
+    badgeValue: 7,
+    path: '/cart'
+  },
+  {
+    id: "3",
+    icon: ProfileIcon,
+    name: "Profile",
+    path: "/profile"
+  }
+]
 
 const DesktopNavbar = () => {
-
-  const DesktopNavConstants = [
-    {
-      id: "1",
-      icon: WishlistIcon,
-      name: "Wishlist",
-    },
-    {
-      id: "2",
-      icon: CartIcon,
-      name: "Cart",
-      badgeValue: 7
-    },
-    {
-      id: "3",
-      icon: ProfileIcon,
-      name: "Profile",
-    }
-  ]
+  const router = useRouter()
 
   return (
     <div className="flex items-center gap-6 justify-between">
@@ -44,7 +49,7 @@ const DesktopNavbar = () => {
         })}
       </div>
       <div className="flex items-center gap-8">
-        <div className="p-1.5 xl:p-2.5 px-3 flex gap-3 items-center rounded-md bg-gray-200 w-[220px]">
+        <div className="p-1.5 xl:p-2.5 px-3 flex gap-3 items-center rounded-md bg-gray-200 w-[320px]">
           <Image src={SearchIcon} alt="search.svg" className="h-5 w-5 xl:h-6 xl:w-6" />
           <p className="text-sm xl:text-base text-gray-700">Search</p>
         </div>
@@ -52,7 +57,7 @@ const DesktopNavbar = () => {
           {
             DesktopNavConstants?.map((navItem) => {
               return (
-                <div className="relative cursor-pointer flex flex-col items-center gap-y-1 px-1" key={navItem?.id}>
+                <div className="relative cursor-pointer flex flex-col items-center gap-y-1 px-1" key={navItem?.id} onClick={() => { router.push(navItem.path) }} >
                   <Image src={navItem?.icon} alt={`${navItem?.name}.svg`} />
                   <p className="text-xs xl:text-sm text-gray-700 hover-primaryColor">{navItem?.name}</p>
                   {

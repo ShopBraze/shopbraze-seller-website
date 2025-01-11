@@ -14,34 +14,40 @@ import { useRef, useState } from "react"
 import Link from "next/link"
 import { MyAccountIcon } from "assets/icons/navbar/my-account-icon-mobile"
 import useClickOutside from "core/hooks/use-click-outside"
+import { useRouter } from "next/router"
+
+const MobileNavConstants = [
+  {
+    id: "1",
+    icon: SearchIcon,
+    name: "Search",
+    path: '/search'
+  },
+  // {
+  //   id: "1",
+  //   icon: WishlistIcon,
+  //   name: "Wishlist",
+  //   badgeValue: 0,
+  // },
+  {
+    id: "2",
+    icon: CartIcon,
+    name: "Cart",
+    badgeValue: 2,
+    path: '/cart'
+
+  },
+  {
+    id: "3",
+    icon: ProfileIcon,
+    name: "Profile",
+    path: '/profile'
+  }
+]
 
 const MobileNavbar = () => {
 
-  const MobileNavConstants = [
-    {
-      id: "1",
-      icon: SearchIcon,
-      name: "Search"
-    },
-    {
-      id: "1",
-      icon: WishlistIcon,
-      name: "Wishlist",
-      badgeValue: 0,
-    },
-    {
-      id: "2",
-      icon: CartIcon,
-      name: "Cart",
-      badgeValue: 2,
-
-    },
-    {
-      id: "3",
-      icon: ProfileIcon,
-      name: "Profile"
-    }
-  ]
+  const router = useRouter()
 
   const sidebarRef = useRef<HTMLDivElement | null>(null)
   const [openSidebar, setOpenSidebar] = useState(false)
@@ -67,7 +73,7 @@ const MobileNavbar = () => {
         {
           MobileNavConstants?.map((navItem) => {
             return (
-              <div className="relative cursor-pointer flex flex-col items-center gap-y-1 px-1" key={navItem?.id}>
+              <div className="relative cursor-pointer flex flex-col items-center gap-y-1 px-1" key={navItem?.id} onClick={() => { router.push(navItem.path) }}>
                 <Image src={navItem?.icon} alt={`${navItem?.name}.svg`} />
                 {
                   navItem?.badgeValue && navItem?.badgeValue > 0 ?

@@ -1,4 +1,5 @@
 import ShareIcon from 'assets/icons/product-details/share-icon.svg'
+import ChevronRightReactIcon from "assets/icons/chevron-right-small"
 import Button from 'common-components/button/button'
 import Image from 'next/image'
 
@@ -26,8 +27,11 @@ const ProductTitleAndPrice = ({ productData }: ProductTitleAndPriceProps) => {
       </div>
       <p className="mt-1 md:mt-2 text-xs md:text-sm text-gray-500 font-semibold">Inclusive of all Taxes</p>
       <div className="pt-2 md:pt-4 flex items-center gap-4">
-        <div className="py-1 px-2 text-xs text-[#fff] rounded-sm primaryBgColor border-dashed border">Free Delivery</div>
-        <div className="py-1 px-2 text-xs text-[#fff] rounded-sm primaryBgColor primaryBgColor border-dashed border">View Available Offers</div>
+        <div className="py-1 px-2 text-xs text-[#000] font-bold rounded-sm bg-[rgba(0,161,121,0.1)] border border-dashed border-gray-400">Free Delivery</div>
+        <div className="py-1 px-2 text-xs text-[#000] font-bold rounded-sm bg-[rgba(0,161,121,0.1)] border border-dashed border-gray-400 flex items-center gap-1">
+          <p>View Available Offers</p>
+          <ChevronRightReactIcon fillColor="#27AE60" />
+        </div>
       </div>
     </div>
   )
