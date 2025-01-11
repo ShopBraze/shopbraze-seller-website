@@ -77,7 +77,7 @@ const OffersDetails = ({ className }: OffersDetailsProps) => {
                 <div className={`py-2.5 lg:py-3 px-2.5 rounded-lg bg-[#d4f6df] flex justify-between items-center`}>
                   <div className="flex gap-3 items-center">
                     <Image src={OffersTagIcon} alt="offers-tag.svg" />
-                    <div className="space-y-2">
+                    <div className="space-y-2 text-left">
                       <p className="text-xs font-bold text-gray-800">Save Upto ₹250</p>
                       <p className="text-xs font-bold text-success-700">8 Offers Available</p>
                     </div>
