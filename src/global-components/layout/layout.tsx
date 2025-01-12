@@ -7,14 +7,15 @@ type LayoutProps = {
   children: React.ReactNode,
   hideFooter?: boolean
   hideTopBanner?: boolean
+  hideNavbar?: boolean
 }
 
-const Layout = ({ children, hideTopBanner = false, hideFooter = false }: LayoutProps) => {
+const Layout = ({ children, hideTopBanner = false, hideFooter = false, hideNavbar = false }: LayoutProps) => {
   return (
     <main className='min-h-[100vh] pb-40 md:pb-10'>
       <header className="sticky top-0 bg-[#fff] z-30">
         {!hideTopBanner && <DashboardTopBanner />}
-        <Navbar />
+        {!hideNavbar && <Navbar />}
       </header>
       {children}
       {!hideFooter && <Footer />}
