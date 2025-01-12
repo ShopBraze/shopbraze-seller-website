@@ -26,8 +26,8 @@ const DesktopNavConstants = [
   {
     id: "3",
     icon: ProfileIcon,
-    name: "Profile",
-    path: "/profile"
+    name: "Orders",
+    path: "/orders"
   }
 ]
 

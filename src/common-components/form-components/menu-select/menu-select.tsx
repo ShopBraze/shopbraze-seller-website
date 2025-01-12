@@ -72,3 +72,12 @@ const MenuSelect = ({ options, selected, placeHolder, onChange, buttonClassName,
 };
 
 export default MenuSelect;
+
+
+{/* <MenuSelect options={ProductSizesOptions}
+              onChange={(option) => { setSelectedSize(option?.value) }}
+              placeHolder='Select Size'
+              selected={selectedSize}
+              optionsContainerClassName='-top-[190px]'
+              optionLabelClassName='text-sm'
+            /> */}
