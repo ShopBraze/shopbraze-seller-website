@@ -18,7 +18,7 @@ const useButton = ({ onClick, variant }: UseButtonProps) => {
       case 'secondary':
         return 'py-2.5 px-[18px] border border-gray-200 rounded-lg bg-white text-primary-800 font-medium flex justify-center hover-primaryBgColor'
       case 'tertiary':
-        return 'text-error-600 font-medium'
+        return 'py-2.5 px-[18px] flex justify-center'
       default:
         return ''
     }
