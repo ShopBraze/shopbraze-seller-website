@@ -1,7 +1,7 @@
 import { DefaultProductImageUrl } from 'constants/index.const'
 import Layout from 'global-components/layout/layout'
 
-import OffersDetails from './offers-details/offers-details'
+import OffersDetails from '../../global-components/offers-details/offers-details'
 import SubTotalAndCheckOut from './subtotal-and-checkout/subtotal-and-checkout'
 import CartProductsContainer from './cart-products-container/cart-products-container'
 

@@ -1,23 +1,23 @@
-import CloseIcon from "assets/icons/modal-close-icon.svg"
 import Button from "common-components/button/button"
-import Modal from 'common-components/modal/modal'
+import Modal from "common-components/modal/modal"
+import Image from "next/image"
 import PlusIcon from "assets/icons/product-details/plus-icon.svg"
 import MinusIcon from "assets/icons/product-details/minus-icon.svg"
-import Image from "next/image"
 
-type Props = {
-  variant?: "primary" | "secondary"
+type BuyNowProps = {
+  children?: React.ReactNode
 }
 
-const AddToCart = ({ variant }: Props) => {
+const BuyNow = ({ children }: BuyNowProps) => {
   return (
     <>
+
       <Modal>
         {({ open, handleOpenToggle }) => {
           return (
             <>
               <Modal.Button onClick={handleOpenToggle} className='w-full'>
-                <div className={`w-full py-2.5 rounded-md text-gray-700 text-sm font-semibold border border-gray-200 hover-primaryBgColor`}>ADD TO CART</div>
+                {children || <div className="w-full py-2.5 rounded-md text-[#fff] text-sm font-semibold primaryBgColor">BUY NOW</div>}
               </Modal.Button>
 
               <Modal.Dialog open={open} handleOpenToggle={handleOpenToggle} closeOnOutsideClick={true} className='bg-[#fff] w-full md:w-[440px] rounded-md'>
@@ -53,9 +53,10 @@ const AddToCart = ({ variant }: Props) => {
                     </div>
 
                   </div>
+
                   <div className="flex gap-3 px-5 py-4 border-t border-gray-200">
                     <Button variant="secondary" className="w-full !py-2 text-sm font-semibold hover-primaryBgColor" onClick={handleOpenToggle}>Cancel</Button>
-                    <Button variant="primary" className="w-full !py-2 text-sm font-semibold hover-primaryBgColor">ADD TO CART</Button>
+                    <Button variant="primary" className="w-full !py-2 text-sm font-semibold hover-primaryBgColor">BUY NOW</Button>
                   </div>
                 </>
               </Modal.Dialog>
@@ -63,8 +64,9 @@ const AddToCart = ({ variant }: Props) => {
           )
         }}
       </Modal>
+
     </>
   )
 }
 
-export default AddToCart
+export default BuyNow

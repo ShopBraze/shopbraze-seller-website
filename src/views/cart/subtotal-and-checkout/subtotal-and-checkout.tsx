@@ -1,5 +1,5 @@
 import React from 'react'
-import OffersDetails from '../offers-details/offers-details'
+import OffersDetails from '../../../global-components/offers-details/offers-details'
 import Button from 'common-components/button/button'
 import Link from 'next/link'
 

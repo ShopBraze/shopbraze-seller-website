@@ -9,6 +9,7 @@ import TagIcon from "assets/icons/offers-tag-icon.svg"
 
 type OffersDetailsProps = {
   className?: string
+  children?: React.ReactNode
 }
 
 const OffersData = [
@@ -66,7 +67,7 @@ const OffersData = [
 ]
 
 
-const OffersDetails = ({ className }: OffersDetailsProps) => {
+const OffersDetails = ({ className, children }: OffersDetailsProps) => {
   return (
     <div className={`${className}`}>
       <Modal>
@@ -74,16 +75,18 @@ const OffersDetails = ({ className }: OffersDetailsProps) => {
           return (
             <>
               <Modal.Button onClick={handleOpenToggle} className="w-full">
-                <div className={`py-2.5 lg:py-3 px-2.5 rounded-lg bg-[#d4f6df] flex justify-between items-center`}>
-                  <div className="flex gap-3 items-center">
-                    <Image src={OffersTagIcon} alt="offers-tag.svg" />
-                    <div className="space-y-2 text-left">
-                      <p className="text-xs font-bold text-gray-800">Save Upto ₹250</p>
-                      <p className="text-xs font-bold text-success-700">8 Offers Available</p>
+                {
+                  children || <div className={`py-2.5 lg:py-3 px-2.5 rounded-lg bg-[#d4f6df] flex justify-between items-center`}>
+                    <div className="flex gap-3 items-center">
+                      <Image src={OffersTagIcon} alt="offers-tag.svg" />
+                      <div className="space-y-2 text-left">
+                        <p className="text-xs font-bold text-gray-800">Save Upto ₹250</p>
+                        <p className="text-xs font-bold text-success-700">8 Offers Available</p>
+                      </div>
                     </div>
+                    <p className="text-sm font-bold text-success-600">OFFERS</p>
                   </div>
-                  <p className="text-sm font-bold text-success-600">OFFERS</p>
-                </div>
+                }
               </Modal.Button>
               <Modal.Dialog open={open} handleOpenToggle={handleOpenToggle} closeOnOutsideClick={true} className='bg-[#fff] w-full md:w-[390px] h-[90vh] md:h-[100vh] overflow-auto' position="right">
                 <div className="py-6 px-3">
