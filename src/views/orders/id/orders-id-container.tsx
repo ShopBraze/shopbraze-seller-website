@@ -12,10 +12,12 @@ const OrdersIdContainer = (props: Props) => {
     <Layout hideNavbar>
 
       <div className="w-full p-3 border-b border-gray-300">
-        <Button className=" flex items-center gap-4">
-          <Image src={ArrowRightIcon} alt="go-back.svg" className="rotate-180 h-7 w-7" />
-          <p className="text-xl text-gray-900 font-bold">Order Details</p>
-        </Button>
+        <Link href={`/orders`}>
+          <Button className="flex items-center gap-4">
+            <Image src={ArrowRightIcon} alt="go-back.svg" className="rotate-180 h-7 w-7" />
+            <p className="text-xl text-gray-900 font-bold">Order Details</p>
+          </Button>
+        </Link>
       </div>
 
       <div className="px-3 xl:w-4/5 md:mx-auto pt-4 md:pt-6 space-y-6">
