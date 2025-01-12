@@ -20,7 +20,7 @@ const OrdersIdContainer = (props: Props) => {
         </Link>
       </div>
 
-      <div className="px-3 xl:w-4/5 md:mx-auto pt-4 md:pt-6 space-y-6">
+      <div className="px-3 xl:w-4/5 md:mx-auto pt-4 md:pt-6 space-y-4 md:space-y-6">
 
         {/* Navigation Path */}
         <div className="py-4 flex items-center gap-3">
