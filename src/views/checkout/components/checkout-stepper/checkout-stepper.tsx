@@ -33,8 +33,8 @@ const CheckoutStepper = ({ activeStep }: CheckoutStepperProps) => {
         CheckoutStepperData?.map(({ value, name, isActive, isDone }, index) => {
           return (
             <>
-              <div className="flex flex-col items-center gap-y-1.5" key={value}>
-                <div className={`h-8 w-8 rounded-full border-2  flex justify-center items-center font-semibold
+              <div className="flex flex-col items-center gap-y-1" key={value}>
+                <div className={`h-6 w-6 rounded-full border-2  flex justify-center items-center text-sm font-semibold
                    ${isDone ? "bg-success-700 text-[#fff]" : isActive ? "border-success-600 text-success-700" : "border-gray-300 text-gray-500"}`}>
                   {value}
                 </div>
