@@ -40,7 +40,7 @@ const CheckoutStepper = ({ activeStep }: CheckoutStepperProps) => {
                 </div>
                 <p className={` font-semibold text-sm ${isActive ? "text-success-700" : isDone ? "text-success-700" : "text-gray-400"}`}>{name}</p>
               </div>
-              {index < 2 && <div className={`mt-4 w-full h-[2px] ${activeStep > index + 1 ? "bg-success-600" : "bg-gray-200"} `} />}
+              {index < 2 && <div className={`mt-3 w-full h-[2px] ${activeStep > index + 1 ? "bg-success-600" : "bg-gray-200"} `} />}
             </>
           )
         })

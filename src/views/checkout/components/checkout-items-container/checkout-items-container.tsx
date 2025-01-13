@@ -26,7 +26,7 @@ const CheckoutItemsContainer = (props: Props) => {
         {
           [1, 2, 3,].map((_, index) => {
             return (
-              <div className="mt-3 p-3 rounded-md border border-gray-200 flex items-center gap-4" key={index}>
+              <div className="mt-3 p-2.5 lg:p-3 rounded-md border border-gray-200 flex items-center gap-4" key={index}>
                 <Image src={DefaultProductImageUrl} alt="prduct.png" height={120} width={100} className="max-w-20 lg:max-w-28 h-auto rounded-md" />
                 <div className="space-y-1">
                   <p className="text-sm font-bold text-gray-900">Lavender evil eye set Straight Winter friendly suits sets</p>
