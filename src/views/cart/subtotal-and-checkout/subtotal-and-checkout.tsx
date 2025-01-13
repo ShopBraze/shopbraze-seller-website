@@ -14,7 +14,7 @@ const SubTotalAndCheckOut = (props: Props) => {
           <p className="text-xl text-gray-800 font-semibold">₹7,194</p>
         </div>
         <p className="mt-1.5 text-xs font-bold text-success-700">Saving ₹8,400</p>
-        <Link href="/checkout">
+        <Link href="/checkout/add-to-cart">
           <Button className="mt-3 w-full py-2.5 rounded-md text-[#fff] text-sm font-semibold primaryBgColor">
             CHECKOUT
           </Button>
