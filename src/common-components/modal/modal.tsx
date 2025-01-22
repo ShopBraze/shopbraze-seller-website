@@ -70,7 +70,7 @@ Modal.Dialog = ({ open, handleOpenToggle, closeOnOutsideClick, children, classNa
         <div className={`relative flex justify-center w-screen h-screen items-center ${getPositionClass()}`}>
 
           {/* Overlay */}
-          <div className={`fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity ${overlayClass}`} />
+          <div className={`fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity ${overlayClass}`} />
 
           {/* Main Content */}
           <div className={`${className} z-[60] fixed left-0 bottom-0 md:relative inline-block`} onClick={(e) => { e?.stopPropagation() }}>

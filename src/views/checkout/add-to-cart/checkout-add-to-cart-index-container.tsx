@@ -9,10 +9,9 @@ type Props = {}
 const CheckoutAddToCartIndexContainer = (props: Props) => {
   return (
     <Layout hideFooter hideTopBanner>
-      <div className="px-3 md:px-10 pt-4 md:pt-6 ">
+      <div className="px-3 pb-10 lg:pb-0 lg:px-10 pt-4 lg:pt-6 ">
         <CheckoutStepper activeStep={2} />
 
-        {/* max-h-[calc(-300px + 100vh)] overflow-scroll scrollbar-hide */}
         <div className="pt-10 flex flex-col gap-y-8 lg:flex-row justify-between">
           <div className="flex-[0.45]">
             <CheckoutItemsContainer />
