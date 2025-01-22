@@ -54,6 +54,7 @@ TextInput.Controller = ({ name, control, label, maxLength, className, placeholde
                 type='text'
                 id={name}
                 value={field.value}
+                autoComplete='on'
                 maxLength={maxLength}
                 onChange={field.onChange}
                 onBlur={showFloatingLabel ? () => handleBlur(field.value) : field.onBlur}
@@ -70,6 +71,7 @@ TextInput.Controller = ({ name, control, label, maxLength, className, placeholde
               type='text'
               id={name}
               value={field.value}
+              autoComplete='on'
               onChange={field.onChange}
               onBlur={showFloatingLabel ? () => handleBlur(field.value) : field.onBlur}
               onFocus={handleFocus}

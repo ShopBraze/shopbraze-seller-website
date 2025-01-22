@@ -145,3 +145,18 @@ body {
 .discount-sale-box-background {
   background-image: url("../assets//images//home-page-discount-sale-container-image.svg");
 }
+
+ input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="radio"]:checked {
+  accent-color: #008060; 
+}
+
