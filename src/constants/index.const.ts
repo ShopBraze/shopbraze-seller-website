@@ -1,3 +1,11 @@
+import PhonePayIcon from "assets/icons/payment-page/phone-pe-icon.svg"
+import GooglePayIcon from "assets/icons/payment-page/google-pay-icon.svg"
+import PaytmIcon from "assets/icons/payment-page/paytm-icon.svg"
+import UpiIcon from "assets/icons/payment-page/upi-icon.svg"
+import RupayIcon from "assets/icons/payment-page/rupay-icon.svg"
+import MasterCardIcon from "assets/icons/payment-page/mastercard-icon.svg"
+import VisaIcon from "assets/icons/payment-page/visa-icon.svg"
+
 export const CrossBannerDefaultImageUrl = "https://res.cloudinary.com/dwr2iupak/image/upload/v1735723628/cross-banner-default-image_1_pf58rf.png"
 
 export const ProductsCategoriesData = [
@@ -112,3 +120,35 @@ export const ProductSizesOptions = [
   { label: 'XL', value: 'XL' },
   { label: 'XXL', value: 'XXL' },
 ];
+
+export const OnlinePaymentMethodsIcon = [
+  {
+    name: "PhonePay",
+    icon: PhonePayIcon
+  },
+  {
+    name: "GooglePay",
+    icon: GooglePayIcon
+  },
+  {
+    name: "Paytm",
+    icon: PaytmIcon
+  },
+  {
+    name: "UPI",
+    icon: UpiIcon
+  },
+  {
+    name: "Rupay Card",
+    icon: RupayIcon
+  },
+  {
+    name: "Master Card",
+    icon: MasterCardIcon
+  },
+  {
+    name: "Visa Card",
+    icon: VisaIcon
+  },
+
+]

@@ -1,6 +1,10 @@
 import { useForm } from "react-hook-form"
 
-const useAddress = () => {
+type Props = {
+  handleCheckoutSteps?: (stepNumber: number) => void
+}
+
+const useAddress = ({ handleCheckoutSteps }: Props) => {
   const { control, formState: { isValid }, watch, handleSubmit } = useForm({
     defaultValues: {
       name: '',
@@ -14,6 +18,7 @@ const useAddress = () => {
   })
 
   const onSubmit = (data: any) => {
+    if (handleCheckoutSteps) handleCheckoutSteps(3)
     console.log(data, "formData")
   }
 
