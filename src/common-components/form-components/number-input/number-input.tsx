@@ -2,7 +2,6 @@ import { Controller } from 'react-hook-form'
 import { useState } from 'react'
 import Image from 'next/image'
 import { NumberInputProps } from './number-input.type'
-import "./number-input.css"
 
 const NumberInput = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>

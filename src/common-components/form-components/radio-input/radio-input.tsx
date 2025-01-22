@@ -1,5 +1,4 @@
 import { RadioInputProps } from "./radio-input.type"
-import "./radio-input.css"
 
 const RadioInput = ({
   containerClassName,
