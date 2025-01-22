@@ -1,0 +1,21 @@
+export type RadioInputProps = {
+  onChange?: any;
+  label?: React.ReactNode | string;
+  control?: any;
+  register?: any;
+  watch?: any;
+  setValue?: any;
+  getValues?: any;
+  setError?: any;
+  errors?: any;
+  labelClassName?: string;
+  inputClassName?: string;
+  containerClassName?: string;
+  required?: boolean;
+  name: string;
+  defaultValue?: string;
+  errorMessage?: string;
+  checkBoxName?: string | boolean;
+  labelLeft?: boolean;
+  labelRight?: boolean;
+};

@@ -4,11 +4,13 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import useAddress from './use-address'
 
-type Props = {}
+type AddressProps = {
+  handleCheckoutSteps: (stepNumber: number) => void
+}
 
-const Address = (props: Props) => {
+const Address = ({ handleCheckoutSteps }: AddressProps) => {
 
-  const { control, handleSubmit, onSubmit, isValid } = useAddress()
+  const { control, handleSubmit, onSubmit, isValid } = useAddress({ handleCheckoutSteps })
 
   return (
     <div className='space-y-7'>
@@ -19,7 +21,7 @@ const Address = (props: Props) => {
           label={'Full Name*'}
           showFloatingLabel
           className={{
-            textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px] focus:outline-none focus:ring-0 focus:border-[#E1E4EA]",
+            textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px]",
             container: ''
           }}
           rules={{
@@ -34,7 +36,7 @@ const Address = (props: Props) => {
           label="House No./ Building Name*"
           showFloatingLabel
           className={{
-            textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px] focus:outline-none focus:ring-0 focus:border-[#E1E4EA]",
+            textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px]",
             container: ''
           }}
           rules={{
@@ -49,7 +51,7 @@ const Address = (props: Props) => {
           label="Road Name / Area / Colony*"
           showFloatingLabel
           className={{
-            textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px] focus:outline-none focus:ring-0 focus:border-[#E1E4EA]",
+            textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px]",
             container: ''
           }}
           rules={{
@@ -68,7 +70,7 @@ const Address = (props: Props) => {
           label="Pincode*"
           showFloatingLabel
           className={{
-            textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px] focus:outline-none focus:ring-0 focus:border-[#E1E4EA]",
+            textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px]",
             container: ''
           }}
           rules={{
@@ -89,7 +91,7 @@ const Address = (props: Props) => {
             label="City*"
             showFloatingLabel
             className={{
-              textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px] focus:outline-none focus:ring-0 focus:border-[#E1E4EA]",
+              textarea: "text-gray-600 font-semibold py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px] ",
               container: 'w-full'
             }}
             disabled={true}
@@ -102,7 +104,7 @@ const Address = (props: Props) => {
             label="State*"
             showFloatingLabel
             className={{
-              textarea: "text-gray-600 font-medium py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px] focus:outline-none focus:ring-0 focus:border-[#E1E4EA]",
+              textarea: "text-gray-600 font-medium py-2 px-3 w-full border border-[#E1E4EA] rounded-sm placeholder:text-[#99A0AE] text-base leading-6 -tracking-[0.176px] ",
               container: 'w-full'
             }}
             disabled={true}
@@ -110,7 +112,7 @@ const Address = (props: Props) => {
         </TextInput>
       </div>
 
-      <div className="w-full pt-6 border-t border-gray-300">
+      <div className="fixed lg:relative z-30 bottom-0 left-0 right-0 w-full bg-[#fff] py-2 px-[18px] lg:px-0 pt-5 border-t border-gray-300">
         <Button variant='primary' className='w-full' onClick={handleSubmit(onSubmit)} disabled={!isValid}>
           Continue
         </Button>
