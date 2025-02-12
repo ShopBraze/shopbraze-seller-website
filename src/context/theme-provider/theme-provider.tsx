@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { FontStyles, ThemeContextProps } from "./theme-provider.type";
+import { useRouter } from "next/router";
 
 const customPromise = new Promise<FontStyles>((resolve) => {
   setTimeout(() => {
@@ -8,9 +9,18 @@ const customPromise = new Promise<FontStyles>((resolve) => {
         // red: "0",
         // green: "128",
         // blue: "96",
-        red: "231",
-        green: "76",
-        blue: "60",
+        // red: "231",
+        // green: "76",
+        // blue: "60",
+        red: "0",
+        green: "147",
+        blue: "153",
+        // red: "153", 
+        // green: "0",
+        // blue: "82",
+        // red: "27",
+        // green: "94",
+        // blue: "32",
       },
       font_family: {
         title1: { name: "Podkova", weight: "500" },
@@ -28,7 +38,11 @@ const customPromise = new Promise<FontStyles>((resolve) => {
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const router = useRouter();
+  const { preview_color } = router.query;
+
   const [fontStyles, setFontStyles] = useState<FontStyles | null>(null);
+  const [previewColor, setPreviewColor] = useState<string | "">("");
 
   const fetchFontStyles = async () => {
     try {
@@ -58,6 +72,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const applyStyles = (data: FontStyles) => {
     const root = document.documentElement;
+    const preview_rgb_color = previewColor ? previewColor?.split("|") : null
 
     // Set font-family and font-weight variables
     Object.entries(data.font_family).forEach(([key, font]) => {
@@ -72,13 +87,24 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     });
 
     // Set color variables
-    const { red, green, blue } = data.color;
-    root.style.setProperty("--color-primary", `rgb(${red}, ${green}, ${blue})`);
+    if (preview_rgb_color && preview_rgb_color?.[0] && preview_rgb_color?.[1] && preview_rgb_color?.[2]) {
+      root.style.setProperty("--color-primary", `rgb(${preview_rgb_color?.[0]}, ${preview_rgb_color?.[1]}, ${preview_rgb_color?.[2]})`);
+    }
+    else {
+      const { red, green, blue } = data.color;
+      root.style.setProperty("--color-primary", `rgb(${red}, ${green}, ${blue})`);
+    }
   };
 
   useEffect(() => {
+    if (!previewColor && preview_color) {
+      setPreviewColor(String(preview_color));
+    }
+  }, [preview_color]);
+
+  useEffect(() => {
     fetchFontStyles();
-  }, []);
+  }, [previewColor])
 
   return (
     <ThemeContext.Provider value={{ fontStyles, setFontStyles }}>
